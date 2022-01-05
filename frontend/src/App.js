@@ -25,11 +25,11 @@ res.phoneNumber=phoneNumber
 res.email=email
 res.hobbies=hobbies
 if (isEdit) {
-  const {details}=await axios.put(`/api/users/update/${updateId}`, res)
+  const {details}=await axios.put(`https://curd-table.rajailani.tech/api/users/update/${updateId}`, res)
 
 }
 else{
-const {details}=await axios.post("/api/users", res)
+const {details}=await axios.post("https://curd-table.rajailani.tech/api/users", res)
 }
 handleAddFormClose()
 
@@ -41,7 +41,7 @@ handleAddFormClose()
   const handleAddFormClose= () => setaddForm(false);
   const handleAddFormShow= () => setaddForm(true);
   const getData = async ()=>{
-    const result = await axios.get("/api/users")
+    const result = await axios.get("https://curd-table.rajailani.tech/api/users")
   setData(result.data)
   }
 
@@ -49,7 +49,7 @@ handleAddFormClose()
   const [url, setUrl] = useState('')
   
   const deleteData=async(id)=>{
-    const remove = await axios.get(`/api/users/delete/${id}`)
+    const remove = await axios.get(`https://curd-table.rajailani.tech/api/users/delete/${id}`)
     window.location.reload()
   }
   const sendingData=()=>{
